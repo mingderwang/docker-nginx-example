@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+
+  nginx:
+    restart: always
+    build: ./user-nginx/
+    ports:
+      - "80:80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
