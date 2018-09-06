@@ -11,6 +11,16 @@ services:
       - web
     links:
       - swaggerui
+      - falconswagger
+
+  falconswagger:
+    build: falcon-swagger
+    networks:
+      - web
+    expose:
+      - "8000"
+    ports:
+      - 8000:8000
 
   swaggerui:
     build: swagger-ui
