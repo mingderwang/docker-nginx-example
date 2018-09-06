@@ -7,6 +7,7 @@ services:
     build: ./user-nginx/
     ports:
       - "80:80"
+      - "8080:8080"
     networks:
       - web
     links:
@@ -19,8 +20,6 @@ services:
       - web
     expose:
       - "8000"
-    ports:
-      - 8000:8000
 
   swaggerui:
     build: swagger-ui
@@ -28,8 +27,6 @@ services:
       - web
     expose:
       - "5000"
-    ports:
-      - 5000:5000
 
 networks:
   web:
